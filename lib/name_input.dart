@@ -52,7 +52,7 @@ class _NameInputState extends State<NameInput> {
                           child: new TextField(
                             onChanged: (txt) {
                               setState(() {
-                                nama = txt.toUpperCase();
+                                nama = txt.toLowerCase();
                               });
                             },
                             keyboardType: TextInputType.text,

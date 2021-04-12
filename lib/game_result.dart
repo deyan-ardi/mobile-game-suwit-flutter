@@ -27,7 +27,7 @@ class GameResult extends StatelessWidget {
     }
 
     if (pilihan == dCom) {
-      result = "Permainan Seri";
+      result = "Seri";
     } else if (pilihan == "Batu" && dCom == "Kertas") {
       result = "Komputer Menang";
     } else if (pilihan == "Batu" && dCom == "Gunting") {
@@ -71,22 +71,27 @@ class GameResult extends StatelessWidget {
                   width: 250.0, fit: BoxFit.cover),
             ),
             SizedBox(height: 50),
-            Text(
-              nama.toString(),
-              style: TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.w500,
-                color: Colors.green,
-              ),
-            ),
             Center(
               child: Text(
-                result.toString(),
+                "Player $nama Memilih $pilihan, Komputer memilih $dCom.",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.green,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+             SizedBox(height: 20),
+            Center(
+              child: Text(
+                "Hasil Permainan : $result",
+                style: TextStyle(
+                  fontSize: 23,
                   fontWeight: FontWeight.w800,
                   color: Colors.redAccent,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             Center(

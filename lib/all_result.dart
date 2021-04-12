@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_suwit/name_input.dart';
 import 'game_result.dart';
 
 // disini akan nambah lingkaran dan segitiga
@@ -12,10 +13,14 @@ class AllResult extends StatelessWidget {
       appBar: AppBar(
         title: Text('BATU GUNTING KERTAS'),
         centerTitle: true,
-        leading: Icon(
-          Icons.favorite,
-          color: Colors.pink,
-          size: 30,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.redAccent, size: 30),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NameInput()),
+            );
+          },
         ),
         backgroundColor: Colors.cyan,
       ),
@@ -58,10 +63,14 @@ class AllResult extends StatelessWidget {
                         padding: EdgeInsets.all(18.0),
                         child: Column(
                           children: <Widget>[
-                            Icon(
-                              Icons.gamepad,
-                              size: 70,
-                              color: Colors.cyan,
+                            Text(
+                              "Gunting",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.cyan,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -95,10 +104,14 @@ class AllResult extends StatelessWidget {
                         padding: EdgeInsets.all(18.0),
                         child: Column(
                           children: <Widget>[
-                            Icon(
-                              Icons.info_rounded,
-                              size: 70,
-                              color: Colors.cyan,
+                            Text(
+                              "Kertas",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.cyan,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -129,7 +142,7 @@ class AllResult extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                GameResult(pilihan: "Gunting", nama : nama)),
+                                GameResult(pilihan: "Batu", nama: nama)),
                       );
                     },
                     child: Card(
@@ -137,10 +150,14 @@ class AllResult extends StatelessWidget {
                         padding: EdgeInsets.all(18.0),
                         child: Column(
                           children: <Widget>[
-                            Icon(
-                              Icons.gamepad,
-                              size: 70,
-                              color: Colors.cyan,
+                           Text(
+                              "Batu",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.cyan,
+                              ),
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
